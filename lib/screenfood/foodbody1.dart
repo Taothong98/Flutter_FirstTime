@@ -10,17 +10,20 @@ class screenfood1 extends StatefulWidget {
   State<screenfood1> createState() => _screenfood1State();
 }
 
-class _screenfood1State extends State<screenfood1> { 
+class _screenfood1State extends State<screenfood1> {
   @override
   Widget build(BuildContext context) {
-
     return SafeArea(
       child: Scaffold(
         body: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('images/tour/หาดคุ้งวิมาน.jpg'),
+              image: AssetImage('images/ดำ.png'),
               fit: BoxFit.cover,
+              colorFilter: ColorFilter.mode(
+                Colors.white.withOpacity(0.1),
+                BlendMode.lighten,
+              ),
             ),
           ),
           child: Padding(
@@ -36,47 +39,49 @@ class _screenfood1State extends State<screenfood1> {
                     child: SingleChildScrollView(
                       child: Column(
                         children: [
-                          const SizedBox(height: 10),
-
+                          // const SizedBox(height: 10),
                           Card(
                             elevation: 4.0,
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0),),
-                            child: ClipRRect(              // ใช้ ClipRRect เพื่อกำหนดขอบโค้งรูป
+                            shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10.0),
-                              child: Image.asset(widget.restaurant.Resimage,      // ใส่รูปภาพใน Card
+                            ),
+                            child: ClipRRect(// ใช้ ClipRRect เพื่อกำหนดขอบโค้งรูป
+                              borderRadius: BorderRadius.circular(10.0),
+                              child: Image.asset(
+                                widget.restaurant.Resimage, // ใส่รูปภาพใน Card
                                 fit: BoxFit.cover,
                               ),
                             ),
                           ),
-
                           Card(
                             color: Colors.white.withOpacity(0.7),
                             elevation: 6.0,
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0),),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
                             child: ListTile(
-                              leading: Icon(Icons.phone),
+                              leading: Icon(Icons.home),
                               title: Text(widget.restaurant.Resname),
                               subtitle: Text(widget.restaurant.Resdetail),
                             ),
                           ),
-                          Card(
-                            color: Colors.white.withOpacity(0.7),
-                            elevation: 6.0,
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0),),
-                            child: ListTile(
-                              leading: Icon(Icons.phone),
-                              title: Text(widget.restaurant.Resname),
-                              subtitle: Text(widget.restaurant.Resdetail),
+                  
+                          const SizedBox(height: 60.0),
+                          Container(
+                            child: Column(
+                              children: [
+                                for (var i = 0; i < dataFood.length; i++)
+                                  Column(
+                                    children: [
+                                      FoodBox(restaurant: dataFood[i]),
+                                      SizedBox(
+                                          height:
+                                              10.0), // เพิ่ม SizedBox ใน Column เพื่อเว้นช่องว่างระหว่าง FoodBox
+                                    ],
+                                  ),
+                              ],
                             ),
                           ),
-                          const SizedBox(height: 20.0),
-                          // ElevatedButton.icon(
-                          //   onPressed: () {
-                          //     Navigator.pop(context);
-                          //   },
-                          //   icon: const Icon(Icons.arrow_back),
-                          //   label: const Text('back'),
-                          // ),
                         ],
                       ),
                     ),

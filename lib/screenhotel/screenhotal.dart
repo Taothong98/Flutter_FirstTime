@@ -1,13 +1,10 @@
-// view.dart
 import 'package:flutter/material.dart';
-// import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
 class screenhotal extends StatelessWidget {
   final String imgbackground;
 
   const screenhotal({Key? key})
       : imgbackground =
-            'images/background3.jpg', // กำหนดค่าให้กับ imgbackground ที่นี่
+            'images/ดำ.png', // กำหนดค่าให้กับ imgbackground ที่นี่
         super(key: key);
 
   @override
@@ -26,6 +23,10 @@ final arguments = ModalRoute.of(context)!.settings.arguments as Map<String, dyna
             image: DecorationImage(
               image: AssetImage(imgbackground),
               fit: BoxFit.cover,
+              colorFilter: ColorFilter.mode(
+                Colors.white.withOpacity(0.1),
+                BlendMode.lighten,
+              ),
             ),
           ),
           child: Padding(
@@ -42,25 +43,6 @@ final arguments = ModalRoute.of(context)!.settings.arguments as Map<String, dyna
                       child: Column(
                         children: [
                           const SizedBox(height: 10),
-
-                          // Card(
-                          //   // กำหนดขนาดของ Card
-                          //   elevation: 6.0, // ความลึกของเงาใน Card
-                          //   shape: RoundedRectangleBorder(
-                          //     borderRadius: BorderRadius.circular(10.0), ), // กำหนดรูปร่างของ Card
-                          //   child: Column(
-                          //     children: [Image.asset(
-                          //       Hotelimage ?? 'images/tour/หาดคุ้งวิมาน.jpg', 
-                          //         fit: BoxFit.cover, 
-                          //       ),
-                          //       Padding(
-                          //         padding: const EdgeInsets.all(8.0),
-                          //         child: Text(Hotelname ?? 'No Name'), // เพิ่มเนื้อหาที่คุณต้องการแสดงใน Card
-                          //       ),
-                          //     ],
-                          //   ),
-                          // ),
-
                           Card(
                             elevation: 4.0,
                             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0),),
@@ -77,9 +59,9 @@ final arguments = ModalRoute.of(context)!.settings.arguments as Map<String, dyna
                             elevation: 6.0,
                             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0),),
                             child: ListTile(
-                              leading: Icon(Icons.email),
+                              leading: Icon(Icons.home),
                               title: Text(Hotelname ?? 'No Name'),
-                              subtitle: Text(Hoteldescription ?? 'No description'),
+                              // subtitle: Text(Hoteldescription ?? 'No description'),
                             ),
                           ),
                           Card(
@@ -88,40 +70,20 @@ final arguments = ModalRoute.of(context)!.settings.arguments as Map<String, dyna
                             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0),),
                             child: ListTile(
                               leading: Icon(Icons.phone),
-                              title: Text(Hotelname ?? 'No Name'),
+                              title: Text('ติดต่อ'),
                               subtitle: Text(Hoteldescription ?? 'No description'),
                             ),
                           ),
-
-                          // Card(
-                          //   child: ListTile(
-                          //     leading: FaIcon(
-                          //       FontAwesomeIcons.line,
-                          //       color: Color.fromARGB(255, 25, 222, 32),
-                          //     ),
-                          //     title: Text('lineid: Threerapat'),
-                          //     subtitle: Text('Chanthaburi Province, Thailand'),
-                          //   ),
-                          // ),
-                          // Card(
-                          //   child: ListTile(
-                          //     leading: FaIcon(
-                          //       FontAwesomeIcons.facebook,
-                          //       color: Colors.blue,
-                          //     ),
-                          //     title: Text('https://www.facebook.com/threerapat/'),
-                          //     subtitle: Text('Chanthaburi Province, Thailand'),
-                          //   ),
-                          // ),
-
                           const SizedBox(height: 20.0),
-                          ElevatedButton.icon(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            icon: const Icon(Icons.arrow_back),
-                            label: const Text('back'),
-                          ),
+
+                          // ElevatedButton.icon(
+                          //   onPressed: () {
+                          //     Navigator.pop(context);
+                          //   },
+                          //   icon: const Icon(Icons.arrow_back),
+                          //   label: const Text('back'),
+                          // ),
+
                         ],
                       ),
                     ),

@@ -36,7 +36,7 @@ final arguments = ModalRoute.of(context)!.settings.arguments as Map<String, dyna
       );
     }
 
-    Color color = Theme.of(context).primaryColor;  // กำหนดสีตัวแปร color
+    Color color = Color.fromARGB(255, 196, 44, 110);  // กำหนดสีตัวแปร color
 
     Widget buttonSection = Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,

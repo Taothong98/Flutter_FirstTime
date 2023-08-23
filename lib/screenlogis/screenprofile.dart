@@ -5,46 +5,49 @@ class profile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Map<String, dynamic> args = ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
+    String name = args['name'];
+    double price = args['price'];
+    String image = args['image'];
+
     return Scaffold(
-      //appBar: AppBar(
-       // title: const Text("About Me"),
-      //  backgroundColor: Colors.deepOrange,
-     // ),
-      body: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          children: const [
-            Center(
-              child: CircleAvatar(          //CircleAvatar ทำให้รูปเป็นวงกลม
-                backgroundImage: NetworkImage('https://mercular.s3.ap-southeast-1.amazonaws.com/images/products/2022/04/items-for-cat-missing-view.jpg'),
-                //backgroundImage: AssetImage('images/01.png'),
-                radius: 80.0,
+      body: Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('images/tour/จุดชมวิวพระยืน.jpg'),
+              fit: BoxFit.cover,
+              colorFilter: ColorFilter.mode(
+                Colors.white.withOpacity(0.1),
+                BlendMode.lighten,
               ),
             ),
-            Divider(
-              height: 80,
-              color: Colors.lightBlue,
-            ),
-            SizedBox(height: 8),
-            ListTile(
-              leading: Text("Name:"),
-              title: Text('Threerapat Sridee'),
-              subtitle: Text('CNT'),
-            ),
-            ListTile(
-              leading: Icon(Icons.email),
-              title: Text('6414921010@rbru.ac.th'),
-              subtitle: Text('computer network , RBRU'),
-            ),
-            
-            Card(
-              child: ListTile(
-                leading: Icon(Icons.phone),
-                title: Text('+66 0842-0857-11'),
-                subtitle: Text('Chanthaburi Province, Thailand'),
+          ),
+
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            children: [
+              Center(
+                child: CircleAvatar(
+                  backgroundImage: AssetImage(image), // ใช้ AssetImage สำหรับรูปภาพ
+                  radius: 80.0,
+                ),
               ),
-            ),
-          ],
+              const Divider(
+                height: 80,
+                color: Colors.lightBlue,
+              ),
+              const SizedBox(height: 8),
+              ListTile(
+                leading: const Text("Name:"), // เพิ่ม const หน้า Text
+                title: Text(name), // ใช้ตัวแปร name ในการแสดงผล
+              ),
+              ListTile(
+                leading: Icon(Icons.email),
+                title: Text(price.toString()), // แปลงเป็น String ก่อนแสดงผล
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -77,17 +77,11 @@ class LogisBox extends StatelessWidget {
   }
 }
 
- List<LogisBox> dataLogis = List.generate(
-    3,
-    (index) => LogisBox(
-      Logisname: index == 0 ? "เช่ายานพาหนะ" 
-      : index == 1 ? "บริการขนส่ง"
-      : "สถานี",
-      Logisdescription: index == 0 ? "บริการขนส่ง" 
-      : index == 1 ? "เช่ายานพาหนะ" 
-      : "สถานี",
-      Logisimage: index == 0 ? 'images/logis/เช่ายานพาหนะ.jpg'
-      : index == 1 ? 'images/logis/บริการขนส่ง.jpg' 
-      : 'images/logis/สถานี.jpg',
-    ),
-  );
+List<LogisBox> dataLogis = List.generate(
+  1,
+  (index) => LogisBox(
+    Logisname: index == 0 ? "เช่ายานพาหนะ" : "", // ต้องมีค่าให้ถูกต้อง
+    Logisdescription: index == 0 ? "รายละเอียดของเช่ายานพาหนะ" : "", // ต้องมีค่าให้ถูกต้อง
+    Logisimage: index == 0 ? 'images/logis/เช่ายานพาหนะ.jpg' : '', // ต้องมีค่าให้ถูกต้อง
+  ),
+);

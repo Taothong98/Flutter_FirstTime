@@ -1,7 +1,6 @@
-// main.dart
 import 'package:flutter/material.dart';
-// import 'screenprofileRider.dart';
 import 'screenprofile.dart';
+
 
 class listRider extends StatefulWidget {
   const listRider({Key? key}) : super(key: key);
@@ -15,15 +14,10 @@ class _MyAppState extends State<listRider> {
   TextEditingController editingController = TextEditingController();
 
   List<CompanyStocks> stocksList = [
- CompanyStocks(name: "A10 NETWORKS INC.",price: 10.34,image: 'images/rider/1.jpg',),
- CompanyStocks(name: "Intel Corp", price: 56.96,image: 'images/rider/p3.png'),
- CompanyStocks(name: "HP Inc", price: 32.43,image: 'images/rider/p4.png'),
- CompanyStocks(name: "Advanced Micro Devices Inc.", price: 77.44,image: 'images/rider/p5.png'),
- CompanyStocks(name: "Apple Inc", price: 133.98,image: 'images/rider/p6.png'),
- CompanyStocks(name: "Amazon.com, Inc.", price: 3505.44,image: 'images/rider/p7.png'),
- CompanyStocks(name: "Microsoft Corporation", price: 265.51,image: 'images/rider/p8.png'),
- CompanyStocks(name: "Facebook", price: 339.1,image: 'images/rider/p9.png'),
- CompanyStocks(name: "A10 NETWORKS INC.", price: 10.34,image: 'images/rider/p10.jpg'),
+ CompanyStocks(name: "ริวมินะเซเนน",price: 10.34,image: 'images/rider/ริวมินะเซเนน.png'),
+ CompanyStocks(name: "เจนนี่", price: 56.96,image: 'images/rider/เจนนี่.jpg'),
+ CompanyStocks(name: "อานอสโกดีโอส", price: 32.43,image: 'images/rider/อานอสโกดีโอส.jpg'),
+ CompanyStocks(name: "เมรี่ยาน่า", price: 77.44,image: 'images/rider/เมรี่ยาน่า.jpg'),
 
   ];
    List<CompanyStocks> items = [];
@@ -50,7 +44,8 @@ class _MyAppState extends State<listRider> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("List View Builder"),
+          backgroundColor: Colors.red,
+          title: const Text("Rider"),
         ),
         body: Container(
           child: Column(
@@ -97,13 +92,20 @@ class _MyAppState extends State<listRider> {
                           ),
                           trailing: Text("\$ ${stocksList[index].price}"),
                           onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => profile(),
-                              ),
-                            );
-                          },
+  Navigator.push(
+    context,
+    MaterialPageRoute(
+      builder: (context) => profile(),
+      settings: RouteSettings(
+        arguments: {
+          'name': items[index].name,
+          'price': items[index].price,
+          'image': items[index].image,
+        },
+      ),
+    ),
+  );
+},
                         ),
                       ),
                     );

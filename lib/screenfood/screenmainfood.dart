@@ -20,12 +20,14 @@ class _screenmainfood extends State<screenmainfood> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.red,
         title: Text(widget.restaurant.Resname),
       ),
       body: Center(
         child: _pages.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.transparent, // กำหนดให้พื้นหลังโปร่งใส
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(IconData(0xe3c9, fontFamily: 'MaterialIcons')),

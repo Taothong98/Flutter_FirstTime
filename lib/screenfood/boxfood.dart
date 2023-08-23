@@ -26,7 +26,7 @@ class Restaurant {
 
 Restaurant restaurant1 = Restaurant(
   Resname: 'ร้านทะเลบุรี หาดคุ้งวิมาน',
-  Resimage: 'images/res/ร้านทะเลบุรีหาดคุ้งวิมาน1.jpg',
+  Resimage: 'images/res/ร้านทะเลบุรีหาดคุ้งวิมาน3.jpg',
   Resdetail: 'ที่อยู่ ตำบล สนามไชย อำเภอนายายอาม จันทบุรี 22170 โทร 086 842 3226',
         meats: [ 
     Meat(Meatname: 'ต้มยำ', Meatdetail: ' 640 kal',Meatprice: 'ราคา 200 บาท',Meatimage: 'images/meat/ต้มยำ.png',),
@@ -46,7 +46,7 @@ Restaurant restaurant1 = Restaurant(
 
 Restaurant restaurant2 = Restaurant(
   Resname: 'ครัวเจ้ญาซีฟู้ด หาดคุ้งวิมาน',
-  Resimage: 'images/res/ครัวเจ้ญาซีฟู้ดหาดคุ้งวิมาน1.jpg',
+  Resimage: 'images/res/ครัวเจ้ญาซีฟู้ดหาดคุ้งวิมาน3.jpg',
   Resdetail: 'ที่อยู่ ตำบล สนามไชย อำเภอนายายอาม จันทบุรี 22170 โทร 086 842 3226',
      meats: [ 
     Meat(Meatname: 'ต้มยำรวมมิตร', Meatdetail: '185.2 kal',Meatprice: 'ราคา 200 บาท',Meatimage: 'images/meat/ต้มยำรวมมิตร.png',),

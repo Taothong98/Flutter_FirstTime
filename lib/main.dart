@@ -33,10 +33,10 @@ class MyApp extends StatelessWidget {
         body: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('images/background3.jpg'),
+              image: AssetImage('images/ดำ.png'),
               fit: BoxFit.cover,
               colorFilter: ColorFilter.mode(
-                Colors.white.withOpacity(0.5),
+                Colors.white.withOpacity(0.1),
                 BlendMode.lighten,
               ),
             ),
@@ -48,6 +48,34 @@ class MyApp extends StatelessWidget {
               children: [
                 SizedBox(
                   height: 10,),
+
+
+                                  Container(
+                  child: CarouselSlider(
+                    options: CarouselOptions(
+                      reverse: true, // กำหนดให้เลื่อนในทิศทางที่ตรงกันข้าม
+                      enlargeCenterPage: true,
+                      enableInfiniteScroll: true,
+                      autoPlay: true,
+                      autoPlayInterval: Duration(milliseconds: 4500),
+                      aspectRatio: 20 /
+                          7, // กำหนดอัตราส่วนกว้างต่ำสุด/สูงสุดของรูปใน TourBox
+                      viewportFraction: 0.97, // กำหนดส่วนที่จะแสดงของ TourBox
+                    ),
+                    items: dataFood
+                          .map(
+                            (restaurant) => FoodBox(
+                            restaurant: restaurant,
+                            )).toList(),
+                    ),
+                  ),
+          
+                SizedBox(
+                  height: 10,),
+
+
+
+
                   Container(
                     //   height: 300, // กำหนดขนาดของ CarouselSlider
                     child: CarouselSlider(
@@ -75,28 +103,6 @@ class MyApp extends StatelessWidget {
                 SizedBox(
                   height: 10,),
           
-                Container(
-                  child: CarouselSlider(
-                    options: CarouselOptions(
-                      reverse: true, // กำหนดให้เลื่อนในทิศทางที่ตรงกันข้าม
-                      enlargeCenterPage: true,
-                      enableInfiniteScroll: true,
-                      autoPlay: true,
-                      autoPlayInterval: Duration(milliseconds: 4500),
-                      aspectRatio: 20 /
-                          7, // กำหนดอัตราส่วนกว้างต่ำสุด/สูงสุดของรูปใน TourBox
-                      viewportFraction: 0.97, // กำหนดส่วนที่จะแสดงของ TourBox
-                    ),
-                    items: dataFood
-                          .map(
-                            (restaurant) => FoodBox(
-                            restaurant: restaurant,
-                            )).toList(),
-                    ),
-                  ),
-          
-                SizedBox(
-                  height: 10,),
           
                 Container(
                     child: CarouselSlider(
@@ -128,7 +134,7 @@ class MyApp extends StatelessWidget {
                       options: CarouselOptions(
                         
                         enlargeCenterPage: true,
-                        enableInfiniteScroll: true,
+                        enableInfiniteScroll: false,
                         autoPlay: false,
                         autoPlayInterval: Duration(milliseconds: 6000),
                         autoPlayCurve: Curves.fastOutSlowIn, // กำหนด pattern ในการเลือนเป็นแบบ fastOutSlowIn
