@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          // automaticallyImplyLeading: false,
           backgroundColor: Colors.red,
           title: Text(
             title,
