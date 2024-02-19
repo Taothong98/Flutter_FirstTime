@@ -1,5 +1,5 @@
 # multi-use-template
 flutterApp
 
-PROJECT in master
+PROJECT in master branches
 
